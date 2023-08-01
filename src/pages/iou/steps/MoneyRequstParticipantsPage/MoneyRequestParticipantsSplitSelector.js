@@ -19,8 +19,8 @@ const propTypes = {
     /** Beta features list */
     betas: PropTypes.arrayOf(PropTypes.string),
 
-    /** Callback to inform parent modal of success */
-    onStepComplete: PropTypes.func.isRequired,
+    /** Callback to request parent modal to go to next step, which should be split */
+    navigateToSplit: PropTypes.func.isRequired,
 
     /** Callback to add participants in MoneyRequestModal */
     onAddParticipants: PropTypes.func.isRequired,
@@ -56,7 +56,7 @@ const defaultProps = {
     safeAreaPaddingBottomStyle: {},
 };
 
-function MoneyRequestParticipantsSplitSelector({betas, participants, personalDetails, reports, translate, onAddParticipants, onStepComplete, safeAreaPaddingBottomStyle}) {
+function MoneyRequestParticipantsSplitSelector({betas, participants, personalDetails, reports, translate, navigateToSplit, onAddParticipants, safeAreaPaddingBottomStyle}) {
     const [searchTerm, setSearchTerm] = useState('');
     const [newChatOptions, setNewChatOptions] = useState({
         recentReports: [],
@@ -175,7 +175,7 @@ function MoneyRequestParticipantsSplitSelector({betas, participants, personalDet
                 boldStyle
                 shouldShowConfirmButton
                 confirmButtonText={translate('common.next')}
-                onConfirmSelection={onStepComplete}
+                onConfirmSelection={navigateToSplit}
                 textInputLabel={translate('optionsSelector.nameEmailOrPhoneNumber')}
                 safeAreaPaddingBottomStyle={safeAreaPaddingBottomStyle}
                 shouldShowOptions={isOptionsDataReady}
