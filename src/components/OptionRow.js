@@ -162,7 +162,6 @@ class OptionRow extends Component {
                 pendingAction={this.props.option.pendingAction}
                 errors={this.props.option.allReportErrors}
                 shouldShowErrorMessages={false}
-                needsOffscreenAlphaCompositing
             >
                 <Hoverable>
                     {(hovered) => (
