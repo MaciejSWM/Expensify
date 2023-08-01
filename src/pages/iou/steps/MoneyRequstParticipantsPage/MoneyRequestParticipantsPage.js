@@ -7,7 +7,6 @@ import CONST from '../../../../CONST';
 import ONYXKEYS from '../../../../ONYXKEYS';
 import ROUTES from '../../../../ROUTES';
 import MoneyRequestParticipantsSplitSelector from './MoneyRequestParticipantsSplitSelector';
-import MoneyRequestParticipantsSelector from './MoneyRequestParticipantsSelector';
 import styles from '../../../../styles/styles';
 import ScreenWrapper from '../../../../components/ScreenWrapper';
 import withLocalize, {withLocalizePropTypes} from '../../../../components/withLocalize';
@@ -94,7 +93,6 @@ function MoneyRequestParticipantsPage({iou, translate, route}) {
                         title={translate('iou.cash')}
                         onBackButtonPress={navigateBack}
                     />
-                    {iouType.current === CONST.IOU.MONEY_REQUEST_TYPE.SPLIT ? (
                         <MoneyRequestParticipantsSplitSelector
                             participants={iou.participants}
                             onAddParticipants={IOU.setMoneyRequestParticipants}
@@ -102,14 +100,6 @@ function MoneyRequestParticipantsPage({iou, translate, route}) {
                             navigateToRequest={() => navigateToNextStep(CONST.IOU.MONEY_REQUEST_TYPE.REQUEST)}
                             navigateToSplit={() => navigateToNextStep(CONST.IOU.MONEY_REQUEST_TYPE.SPLIT)}
                         />
-                    ) : (
-                        <MoneyRequestParticipantsSelector
-                            onStepComplete={navigateToNextStep}
-                            onAddParticipants={IOU.setMoneyRequestParticipants}
-                            safeAreaPaddingBottomStyle={safeAreaPaddingBottomStyle}
-                            iouType={iouType.current}
-                        />
-                    )}
                 </View>
             )}
         </ScreenWrapper>
