@@ -100,7 +100,7 @@ function MoneyRequestParticipantsPage({iou, translate, route}) {
                             onAddParticipants={IOU.setMoneyRequestParticipants}
                             safeAreaPaddingBottomStyle={safeAreaPaddingBottomStyle}
                             navigateToRequest={() => navigateToNextStep(CONST.IOU.MONEY_REQUEST_TYPE.REQUEST)}
-                            navigateToSpli={() => navigateToNextStep(CONST.IOU.MONEY_REQUEST_TYPE.SPLIT)}
+                            navigateToSplit={() => navigateToNextStep(CONST.IOU.MONEY_REQUEST_TYPE.SPLIT)}
                         />
                     ) : (
                         <MoneyRequestParticipantsSelector
