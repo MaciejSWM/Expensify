@@ -168,7 +168,7 @@ function MoneyRequestParticipantsSplitSelector({betas, participants, personalDet
                 canSelectMultipleOptions
                 shouldShowMultipleOptionSelectorAsButton
                 multipleOptionSelectorButtonText={translate('iou.split')}
-                onAddToSelection={(option) => toggleOption(option)}
+                onAddToSelection={toggleOption}
                 sections={sections}
                 selectedOptions={participants}
                 value={searchTerm}
@@ -177,7 +177,7 @@ function MoneyRequestParticipantsSplitSelector({betas, participants, personalDet
                 headerMessage={headerMessage}
                 boldStyle
                 shouldShowConfirmButton
-                confirmButtonText={translate('common.next')}
+                confirmButtonText={translate('iou.addToSplit')}
                 onConfirmSelection={navigateToSplit}
                 textInputLabel={translate('optionsSelector.nameEmailOrPhoneNumber')}
                 safeAreaPaddingBottomStyle={safeAreaPaddingBottomStyle}
