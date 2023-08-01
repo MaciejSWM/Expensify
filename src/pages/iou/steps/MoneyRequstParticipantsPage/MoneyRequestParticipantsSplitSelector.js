@@ -166,10 +166,13 @@ function MoneyRequestParticipantsSplitSelector({betas, participants, personalDet
         <View style={[styles.flex1, styles.w100, participants.length > 0 ? safeAreaPaddingBottomStyle : {}]}>
             <OptionsSelector
                 canSelectMultipleOptions
+                shouldShowMultipleOptionSelectorAsButton
+                multipleOptionSelectorButtonText={translate('iou.split')}
+                onAddToSelection={(option) => toggleOption(option)}
                 sections={sections}
                 selectedOptions={participants}
                 value={searchTerm}
-                onSelectRow={toggleOption}
+                // onSelectRow={toggleOption}
                 onChangeText={setSearchTerm}
                 headerMessage={headerMessage}
                 boldStyle
