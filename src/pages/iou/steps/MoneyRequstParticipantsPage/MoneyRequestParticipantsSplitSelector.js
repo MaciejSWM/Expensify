@@ -20,6 +20,9 @@ const propTypes = {
     betas: PropTypes.arrayOf(PropTypes.string),
 
     /** Callback to request parent modal to go to next step, which should be split */
+    navigateToRequest: PropTypes.func.isRequired,
+
+    /** Callback to request parent modal to go to next step, which should be split */
     navigateToSplit: PropTypes.func.isRequired,
 
     /** Callback to add participants in MoneyRequestModal */
@@ -56,7 +59,7 @@ const defaultProps = {
     safeAreaPaddingBottomStyle: {},
 };
 
-function MoneyRequestParticipantsSplitSelector({betas, participants, personalDetails, reports, translate, navigateToSplit, onAddParticipants, safeAreaPaddingBottomStyle}) {
+function MoneyRequestParticipantsSplitSelector({betas, participants, personalDetails, reports, translate, navigateToRequest, navigateToSplit, onAddParticipants, safeAreaPaddingBottomStyle}) {
     const [searchTerm, setSearchTerm] = useState('');
     const [newChatOptions, setNewChatOptions] = useState({
         recentReports: [],
@@ -172,7 +175,7 @@ function MoneyRequestParticipantsSplitSelector({betas, participants, personalDet
                 sections={sections}
                 selectedOptions={participants}
                 value={searchTerm}
-                // onSelectRow={toggleOption}
+                onSelectRow={navigateToRequest}
                 onChangeText={setSearchTerm}
                 headerMessage={headerMessage}
                 boldStyle
