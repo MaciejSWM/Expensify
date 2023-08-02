@@ -331,13 +331,15 @@ export default {
         },
     },
     sidebarScreen: {
-        fabAction: 'New chat',
+        chat: 'Chat',
+        room: 'Room',
         newChat: 'New chat',
         newGroup: 'New group',
         newRoom: 'New room',
+        fabNewChat: 'Send message',
+        fabNewChatExplained: 'Send message (Floating action)',
         buttonSearch: 'Search',
         buttonMySettings: 'My settings',
-        fabNewChat: 'New chat (Floating action)',
         chatPinned: 'Chat pinned',
         draftedMessage: 'Drafted message',
         listOfChatMessages: 'List of chat messages',
@@ -346,6 +348,8 @@ export default {
     tabSelector: {
         manual: 'Manual',
         scan: 'Scan',
+        chat: 'Chat',
+        room: 'Room',
     },
     receipt: {
         upload: 'Upload receipt',
@@ -383,6 +387,7 @@ export default {
         payElsewhere: 'Pay elsewhere',
         settlePaypalMe: ({formattedAmount}) => `Pay ${formattedAmount} with PayPal.me`,
         requestAmount: ({amount}) => `request ${amount}`,
+        addToSplit: 'Add to split',
         splitAmount: ({amount}) => `split ${amount}`,
         amountEach: ({amount}) => `${amount} each`,
         payerOwesAmount: ({payer, amount}) => `${payer} owes ${amount}`,
@@ -835,6 +840,8 @@ export default {
         localTime: 'Local time',
     },
     newChatPage: {
+        addToGroup: 'Add to group',
+        createChat: 'Create chat',
         createGroup: 'Create group',
     },
     yearPickerPage: {
@@ -1372,7 +1379,7 @@ export default {
             openShortcutDialog: 'Opens the keyboard shortcuts dialog',
             escape: 'Escape dialogs',
             search: 'Open search dialog',
-            newGroup: 'New group screen',
+            newChat: 'New chat screen',
             copy: 'Copy comment',
         },
     },

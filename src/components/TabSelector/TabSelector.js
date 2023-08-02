@@ -24,7 +24,20 @@ const defaultProps = {
     onTabPress: () => {},
 };
 
-const getIcon = (route) => (route === CONST.TAB.MANUAL ? Expensicons.Pencil : Expensicons.Receipt);
+const getIcon = (route) => {
+    switch (route) {
+        case CONST.TAB.MANUAL:
+            return Expensicons.Pencil;
+        case CONST.TAB.SCAN:
+            return Expensicons.Receipt;
+        case CONST.TAB.NEW_CHAT:
+            return Expensicons.User;
+        case CONST.TAB.NEW_ROOM:
+            return Expensicons.Hashtag;
+        default:
+            return Expensicons.DotIndicator
+    }
+}
 
 function TabSelector({state, navigation, onTabPress}) {
     const {translate} = useLocalize();
@@ -58,7 +71,7 @@ function TabSelector({state, navigation, onTabPress}) {
                     />
                 );
             })}
-        </View>
+        </View> 
     );
 }
 

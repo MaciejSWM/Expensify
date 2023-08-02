@@ -231,21 +231,11 @@ const SearchModalStackNavigator = createModalStackNavigator([
     },
 ]);
 
-const NewGroupModalStackNavigator = createModalStackNavigator([
-    {
-        getComponent: () => {
-            const NewGroupPage = require('../../../pages/NewGroupPage').default;
-            return NewGroupPage;
-        },
-        name: 'NewGroup_Root',
-    },
-]);
-
 const NewChatModalStackNavigator = createModalStackNavigator([
     {
         getComponent: () => {
-            const NewChatPage = require('../../../pages/NewChatPage').default;
-            return NewChatPage;
+            const NewChatSelectorPage = require('../../../pages/NewChatSelectorPage').default;
+            return NewChatSelectorPage;
         },
         name: 'NewChat_Root',
     },
@@ -594,13 +584,6 @@ const SettingsModalStackNavigator = createModalStackNavigator([
     },
     {
         getComponent: () => {
-            const WorkspaceNewRoomPage = require('../../../pages/workspace/WorkspaceNewRoomPage').default;
-            return WorkspaceNewRoomPage;
-        },
-        name: 'Workspace_NewRoom',
-    },
-    {
-        getComponent: () => {
             const ReimbursementAccountPage = require('../../../pages/ReimbursementAccount/ReimbursementAccountPage').default;
             return ReimbursementAccountPage;
         },
@@ -722,7 +705,6 @@ export {
     ReportWelcomeMessageModalStackNavigator,
     ReportParticipantsModalStackNavigator,
     SearchModalStackNavigator,
-    NewGroupModalStackNavigator,
     NewChatModalStackNavigator,
     NewTaskModalStackNavigator,
     SettingsModalStackNavigator,
